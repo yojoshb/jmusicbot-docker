@@ -4,7 +4,13 @@ docker container for [JMusicBot](https://github.com/jagrosh/MusicBot)
 ## Usage
 
 ### Docker
-Usage: `docker run -it -v yourpath/toconfig:/config yojoshb/jmusicbot:latest`
+```bash
+docker run -dt \  
+  --name=jmusicbot \  
+  -v /yourpath/toconfig:/config \
+  --restart=unless-stopped \
+  yojoshb/jmusicbot
+```
 
 Place your config.txt in `yourpath/toconfig` to map it to the container.
 
@@ -15,9 +21,9 @@ Place your config.txt in `yourpath/toconfig` to map it to the container.
 ---
 version: "2"
 services:
-  musicbot:
+  jmusicbot:
     image: yojoshb/jmusicbot
-    container_name: musicbot
+    container_name: jmusicbot
     volumes:
       - /yourpath/toconfig:/config
     restart: unless-stopped
