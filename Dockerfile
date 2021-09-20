@@ -1,9 +1,8 @@
 FROM alpine:latest
 
-ENV VERSION 0.3.5
 ENV PUID=1000 PGID=1000
 
-RUN apk --update add --no-cache openjdk11-jre
+RUN apk --update add --no-cache openjdk11-jre grep curl
 
 RUN mkdir /app
 RUN mkdir /config

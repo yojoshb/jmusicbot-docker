@@ -2,7 +2,6 @@
 docker container for [JMusicBot](https://github.com/jagrosh/MusicBot)
 
 ## Usage
-[JMusicBot](https://github.com/jagrosh/MusicBot)
 
 ### Docker
 Usage: `docker run -it -v yourpath/toconfig:/config yojoshb/jmusicbot:latest`
