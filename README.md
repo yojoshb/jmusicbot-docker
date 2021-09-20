@@ -2,6 +2,11 @@
 docker container for [JMusicBot](https://github.com/jagrosh/MusicBot). This uses the latest Alpine image for a small footprint.
 
 ## Usage
+Place your config.txt in `yourpath/toconfig` to map it to the container. If you need to access the `serversettings.json` file, you can hop into the container to access it
+
+```bash
+docker exec -it jmusicbot /bin/sh
+```
 
 ### Docker CLI
 ```bash
@@ -11,9 +16,6 @@ docker run -dt \
   --restart=unless-stopped \
   yojoshb/jmusicbot
 ```
-
-Place your config.txt in `yourpath/toconfig` to map it to the container.
-
 ---
 ### Docker Compose
 
@@ -28,5 +30,3 @@ services:
       - /yourpath/toconfig:/config
     restart: unless-stopped
 ```
-
-Place your config.txt in `yourpath/toconfig` to map it to the container.
