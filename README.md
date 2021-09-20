@@ -3,7 +3,7 @@ docker container for [JMusicBot](https://github.com/jagrosh/MusicBot). This uses
 
 ## Usage
 
-### Docker
+### Docker CLI
 ```bash
 docker run -dt \  
   --name=jmusicbot \  
