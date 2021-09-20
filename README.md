@@ -1,5 +1,5 @@
 # jmusicbot-docker
-docker container for [JMusicBot](https://github.com/jagrosh/MusicBot)
+docker container for [JMusicBot](https://github.com/jagrosh/MusicBot). This uses the latest Alpine image for a small footprint.
 
 ## Usage
 
