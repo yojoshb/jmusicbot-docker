@@ -1,16 +1,19 @@
 FROM alpine:latest
 
-ENV PUID=1000 PGID=1000
+RUN apk -U upgrade --no-cache \
+  && apk add --no-cache openjdk11-jre \
+  && apk add --no-cache curl \
+  && apk add --no-cache grep \
+  && mkdir /app \
+  && mkdir /config \
+  && ln -s /config/serversettings.json /app/serversettings.json
 
-RUN apk --update add --no-cache openjdk11-jre grep curl
-
-RUN mkdir /app
-RUN mkdir /config
+STOPSIGNAL SIGTERM
 
 COPY run_bot.sh /app/run_bot.sh
-RUN chmod +x /app/run_bot.sh
+RUN chmod 700 /app/run_bot.sh
 
 WORKDIR /app
-VOLUME /config
+VOLUME  /config
 
-CMD ["/bin/sh","./run_bot.sh"]
+CMD ["./run_bot.sh"]
