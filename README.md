@@ -1,6 +1,6 @@
 # JMusicBot Docker
 [![Docker Pulls](https://img.shields.io/docker/pulls/yojoshb/jmusicbot?style=for-the-badge)](https://hub.docker.com/r/yojoshb/jmusicbot)
-[![Docker Image Size (tag)](https://img.shields.io/docker/image-size/yojoshb/jmusicbot/latest?color=g&style=for-the-badge)](https://hub.docker.com/r/yojoshb/jmusicbot)
+[![Docker Image Size (tag)](https://img.shields.io/docker/image-size/yojoshb/jmusicbot/latest?color=green&style=for-the-badge)](https://hub.docker.com/r/yojoshb/jmusicbot)
 
 Docker container for [JMusicBot](https://github.com/jagrosh/MusicBot). This uses the latest Alpine image for a small footprint.
 
