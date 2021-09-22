@@ -11,6 +11,8 @@ Place your **config.txt** in `yourpath/toconfig` to map it to the container. The
 docker exec -it jmusicbot /bin/sh
 ```
 
+---
+
 ### Docker CLI
 ```bash
 docker run -dt \  
@@ -19,7 +21,7 @@ docker run -dt \
   --restart=unless-stopped \
   yojoshb/jmusicbot
 ```
----
+
 ### Docker Compose
 
 ```bash
