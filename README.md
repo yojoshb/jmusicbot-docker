@@ -1,5 +1,5 @@
 # JMusicBot Docker
-[![Release](https://img.shields.io/github/release/jagrosh/MusicBot?style=for-the-badge)](https://github.com/jagrosh/MusicBot/releases/latest)
+[![Release](https://img.shields.io/github/release/jagrosh/MusicBot?color=g&style=for-the-badge)](https://github.com/jagrosh/MusicBot/releases/latest)
 [![Docker Pulls](https://img.shields.io/docker/pulls/yojoshb/jmusicbot?style=for-the-badge)](https://hub.docker.com/r/yojoshb/jmusicbot)
 [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/yojoshb/jmusicbot/latest?color=blueviolet&style=for-the-badge)](https://hub.docker.com/r/yojoshb/jmusicbot)
 
