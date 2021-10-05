@@ -1,9 +1,6 @@
-FROM alpine:latest
+FROM bitnami/minideb:latest
 
-RUN apk -U upgrade --no-cache \
-  && apk add --no-cache openjdk11-jre \
-  && apk add --no-cache curl \
-  && apk add --no-cache grep \
+RUN install_packages openjdk-11-jre-headless wget curl grep \
   && mkdir /app \
   && mkdir /config \
   && ln -s /config/serversettings.json /app/serversettings.json
