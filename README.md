@@ -6,10 +6,10 @@
 Docker container for [JMusicBot](https://github.com/jagrosh/MusicBot). This uses the latest Minideb image for a small footprint.
 
 ## Usage
-Place your **config.txt** in `yourpath/toconfig` to map it to the container. The config folder will also contain the `Playlists` directory and `serversettings.json` if it exists. If you need to access the container you can hop into it and get a shell using:
+Place your **config.txt** and **Playlists** folder in `yourpath/toconfig` to map it to the container. The config folder will also contain the `serversettings.json` if it exists. If you need to access the container you can hop into it and get a shell using:
 
 ```bash
-docker exec -it jmusicbot /bin/sh
+docker exec -it jmusicbot /bin/bash
 ```
 
 ---
