@@ -2,7 +2,7 @@ FROM bitnami/minideb:latest
 
 RUN install_packages openjdk-11-jre-headless wget curl grep \
   && mkdir -p /app/Playlists \
-  && mkdir /config \
+  && mkdir -p /config/Playlists \
   && ln -s /config/Playlists /app/Playlists \
   && ln -s /config/serversettings.json /app/serversettings.json
 
