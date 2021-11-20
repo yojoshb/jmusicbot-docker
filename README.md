@@ -16,7 +16,7 @@ docker exec -it jmusicbot /bin/bash
 
 ### Docker CLI
 ```bash
-docker run -dt \  
+docker run -dit \  
   --name=jmusicbot \  
   -v /yourpath/toconfig:/config \
   --restart=unless-stopped \
