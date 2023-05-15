@@ -3,7 +3,7 @@
 [![Docker Hub Pulls](https://img.shields.io/docker/pulls/yojoshb/jmusicbot?color=blue&style=for-the-badge)](https://hub.docker.com/r/yojoshb/jmusicbot)
 [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/yojoshb/jmusicbot/latest?color=blueviolet&style=for-the-badge)](https://hub.docker.com/r/yojoshb/jmusicbot)
 
-Docker container for the latest version [JMusicBot](https://github.com/jagrosh/MusicBot)
+Docker container for the latest version of [JMusicBot](https://github.com/jagrosh/MusicBot)
 
 ## Usage
 Place your **config.txt**, **Playlists** folder, and **serversettings.json** file (if you have one) in `yourpath/toconfig` to map it to the container. If you need to access the container you can hop into it and get a shell using:
