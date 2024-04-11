@@ -8,10 +8,12 @@ RUN install_packages openjdk-11-jre-headless wget curl grep \
 
 STOPSIGNAL SIGTERM
 
+ENV BOT_VERSION latest
+
 COPY run_bot.sh /app/run_bot.sh
-RUN chmod 700 /app/run_bot.sh
+RUN chmod +x /app/run_bot.sh
 
 WORKDIR /app
-VOLUME  /config
+VOLUME /config
 
 CMD ["./run_bot.sh"]

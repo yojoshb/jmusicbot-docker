@@ -1,31 +1,25 @@
 # JMusicBot Docker
 [![Release](https://img.shields.io/github/release/jagrosh/MusicBot?color=g&style=for-the-badge)](https://github.com/jagrosh/MusicBot/releases/latest)
-[![Docker Hub Pulls](https://img.shields.io/docker/pulls/yojoshb/jmusicbot?color=blue&style=for-the-badge)](https://hub.docker.com/r/yojoshb/jmusicbot)
 ![Supports amd64 Architecture](https://img.shields.io/badge/amd64-yes-blueviolet.svg?style=for-the-badge)
 ![Supports arm64 Architecture](https://img.shields.io/badge/arm64-yes-blueviolet.svg?style=for-the-badge)
 
-Docker container for the latest version of [JMusicBot](https://github.com/jagrosh/MusicBot)
+A simple Docker container for [JMusicBot](https://github.com/jagrosh/MusicBot)
 
 ## Usage
-Place your **config.txt**, **Playlists** folder, and **serversettings.json** file (if you have one) in `yourpath/toconfig` to map it to the container. If you need to access the container you can hop into it and get a shell using:
+- Place your **config.txt**, **Playlists** folder, and **serversettings.json** file (if you have one) in `/your/path/to/config`. This directory will be shared with the container.
+- You can specify a JMusicBot version using the environment value `BOT_VERSION`. By default it will use the latest version so you do not have to include the value if you don't want to.
 
-```bash
-docker exec -it jmusicbot /bin/bash
-```
-
----
-
-### Docker CLI
+### Docker examples
+- Using docker cli
 ```bash
 docker run -dit \  
-  --name=jmusicbot \  
-  -v /yourpath/toconfig:/config \
+  --name=jmusicbot \
+  -v /your/path/to/config:/config \
   --restart=unless-stopped \
   ghcr.io/yojoshb/jmusicbot-docker
 ```
 
-### Docker Compose
-
+- Using docker compose
 ```bash
 ---
 version: "3"
@@ -33,7 +27,22 @@ services:
   jmusicbot:
     image: ghcr.io/yojoshb/jmusicbot-docker
     container_name: jmusicbot
+    environment:
+      - BOT_VERSION=0.3.9 # You can leave this out if you just want to run the latest version
     volumes:
-      - /yourpath/toconfig:/config
+      - /your/path/to/config:/config
     restart: unless-stopped
+```
+
+---
+
+#### Debugging
+- If you need to access the container you can hop into it and get a shell using:
+```bash
+docker exec -it jmusicbot /bin/bash
+```
+
+- Or read the logs if your having issues
+```bash
+docker logs jmusicbot
 ```
