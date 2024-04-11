@@ -1,17 +1,14 @@
-FROM bitnami/minideb:latest
+FROM bitnami/minideb:bullseye
 
 RUN install_packages openjdk-11-jre-headless wget curl grep \
-  && mkdir /app \
-  && mkdir -p /config/Playlists \
-  && ln -s /config/Playlists /app/Playlists \
-  && ln -s /config/serversettings.json /app/serversettings.json
+  && mkdir -p /config/Playlists
 
 STOPSIGNAL SIGTERM
 
-COPY run_bot.sh /app/run_bot.sh
-RUN chmod 700 /app/run_bot.sh
+COPY run_bot.sh /config/run_bot.sh
+RUN chmod +x /config/run_bot.sh
 
-WORKDIR /app
+WORKDIR /config
 VOLUME  /config
 
 CMD ["./run_bot.sh"]
