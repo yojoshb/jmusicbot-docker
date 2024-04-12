@@ -3,11 +3,13 @@
 ![Supports amd64 Architecture](https://img.shields.io/badge/amd64-yes-blueviolet.svg?style=for-the-badge)
 ![Supports arm64 Architecture](https://img.shields.io/badge/arm64-yes-blueviolet.svg?style=for-the-badge)
 
-A simple Docker container for [JMusicBot](https://github.com/jagrosh/MusicBot)
+A simple Docker container for [JMusicBot](https://github.com/jagrosh/MusicBot). The container will start up, then download JmusicBot from the projects repository and run it.
 
 ## Usage
 - Place your **config.txt**, **Playlists** folder, and **serversettings.json** file (if you have one) in `/your/path/to/config`. This directory will be shared with the container.
-- You can specify a JMusicBot version using the environment value `BOT_VERSION`. By default it will use the latest version so you do not have to include the value if you don't want to.
+  > Refer to the documentaion on how to [configure the bot](https://jmusicbot.com/setup/#3-configure-the-bot)
+- You can specify a JMusicBot version using the environment variable `BOT_VERSION`. By default the latest version will be downloaded so you don't have to include the value if you want to use latest.
+  > The version numbers you can use use correspond to the [releases](https://github.com/jagrosh/MusicBot/releases)
 
 ### Docker examples
 - Using docker cli
@@ -28,7 +30,7 @@ services:
     image: ghcr.io/yojoshb/jmusicbot-docker
     container_name: jmusicbot
     environment:
-      - BOT_VERSION=0.3.9 # You can leave this out if you just want to run the latest version
+      - BOT_VERSION=0.3.9 # You can omit the environment variable if you just want to run the latest version
     volumes:
       - /your/path/to/config:/config
     restart: unless-stopped
