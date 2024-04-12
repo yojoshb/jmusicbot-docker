@@ -9,9 +9,7 @@ if [ $BOT_VERSION == "latest" ]; then
 fi
 
 echo -e "Downloading JMusicBot $BOT_VERSION"
-if [ ! -f JMusicBot-$BOT_VERSION.jar ]; then	
-  wget https://github.com/jagrosh/MusicBot/releases/download/$BOT_VERSION/JMusicBot-$BOT_VERSION.jar
-fi
+wget https://github.com/jagrosh/MusicBot/releases/download/$BOT_VERSION/JMusicBot-$BOT_VERSION.jar
 
 echo -e "Starting JMusicBot $BOT_VERSION"
 java -Dnogui=true -Dconfig=/config/config.txt -jar JMusicBot-$BOT_VERSION.jar 
