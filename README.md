@@ -42,7 +42,7 @@ services:
 docker exec -it jmusicbot /bin/bash
 ```
 
-- Or read the logs if your having issues
+- Or read the logs:
 ```bash
 docker logs jmusicbot
 ```
