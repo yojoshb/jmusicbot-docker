@@ -10,6 +10,8 @@ fi
 # Check if the release JSON was fetched successfully
 if [ -z "$RELEASE_JSON" ] || echo "$RELEASE_JSON" | grep -q '"message": "Not Found"'; then
   echo "Error: Could not find release for version '$BOT_VERSION'."
+  echo "Possible release tags for ${BOT_GITHUB}:"
+  curl --silent "https://api.github.com/repos/${BOT_GITHUB}/releases" | grep -Po '"tag_name":\s*"\K[^"]*' | head -n 10
   exit 1
 fi
 
