@@ -17,9 +17,8 @@ VERSION_TAG=$(echo "$RELEASE_JSON" | grep -Po '"tag_name":\s*"\K[^"]*')
 ASSET_NAME=$(echo "$RELEASE_JSON" | grep -Po '"name":\s*"\KJMusicBot[^"]*\.jar')
 DOWNLOAD_URL=$(echo "$RELEASE_JSON" | grep -Po '"browser_download_url":\s*"\Khttps://[^"]*JMusicBot[^"]*\.jar')
 
-echo -e "Using JMusicBot $VERSION_TAG"
+echo -e "Downloading JMusicBot $VERSION_TAG"
 if [ ! -f "$ASSET_NAME" ]; then
-  echo -e "Downloading JMusicBot $VERSION_TAG"
   wget "$DOWNLOAD_URL" -O "$ASSET_NAME"
 fi
 
