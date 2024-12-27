@@ -19,9 +19,17 @@ VERSION_TAG=$(echo "$RELEASE_JSON" | grep -Po '"tag_name":\s*"\K[^"]*')
 ASSET_NAME=$(echo "$RELEASE_JSON" | grep -Po '"name":\s*"\KJMusicBot[^"]*\.jar')
 DOWNLOAD_URL=$(echo "$RELEASE_JSON" | grep -Po '"browser_download_url":\s*"\Khttps://[^"]*JMusicBot[^"]*\.jar')
 
+if [ -z "$ASSET_NAME" ] || [ -z "$DOWNLOAD_URL" ]; then
+  echo "Error: No matching asset found in release $VERSION_TAG."
+  exit 1
+fi
+
 echo -e "Downloading JMusicBot $VERSION_TAG"
 if [ ! -f "$ASSET_NAME" ]; then
-  wget "$DOWNLOAD_URL" -O "$ASSET_NAME"
+  if ! wget "$DOWNLOAD_URL" -O "$ASSET_NAME"; then
+    echo "Error: Failed to download $ASSET_NAME."
+    exit 1
+  fi
 fi
 
 echo -e "Starting JMusicBot $VERSION_TAG"
