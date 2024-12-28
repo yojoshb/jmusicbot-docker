@@ -8,7 +8,8 @@ RUN install_packages openjdk-11-jre-headless wget curl grep \
 
 STOPSIGNAL SIGTERM
 
-ENV BOT_VERSION latest
+ENV BOT_VERSION="latest"
+ENV BOT_GITHUB="jagrosh/MusicBot"
 
 COPY run_bot.sh /app/run_bot.sh
 RUN chmod +x /app/run_bot.sh
